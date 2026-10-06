@@ -1,0 +1,16 @@
+# Dependencies
+/node_modules
+
+# Environment variables (conserve uniquement .env.example)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+# Données locales et uploads (remplacés par Turso)
+/data/
+/public/uploads/
+*.db
+*.db-wal
+*.db-shm

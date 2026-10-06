@@ -1,0 +1,21 @@
+{
+  "name": "mamoabio-sqlite",
+  "version": "1.0.0",
+  "description": "Mamoabio - site e-commerce vitrine avec administration et SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "migrate": "node scripts/migrate-to-turso.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "@libsql/client": "^0.15.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

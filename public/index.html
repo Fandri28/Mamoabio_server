@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mamoabio . Madagascar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">🌿 Produits naturels de Madagascar · Qualité & authenticité</div>
+<header class="header"><div class="container nav">
+<a class="logo" href="#"><b>M</b><span>Mamoa<i>bio</i></span></a>
+<nav><a href="#accueil">Accueil</a><a href="#produits">Produits</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></nav>
+<div class="nav-right"><a class="admin-link" href="#" data-open-admin>Administration</a><button id="menuBtn" class="hamb">☰</button></div></div>
+<div id="mobileNav" class="mobile-nav"><a href="#accueil">Accueil</a><a href="#produits">Produits</a><a href="#apropos">À propos</a><a href="#contact">Contact</a><a href="#" data-open-admin>Administration</a></div></header>
+
+<main>
+<section id="accueil" class="hero"><div class="hero-overlay"></div><div class="container hero-content">
+<div class="eyebrow">L'essence naturelle de Madagascar</div><h1>Les trésors<br><em>naturels</em> de Madagascar.</h1>
+<p>Découvrez des produits authentiques sélectionnés avec soin, directement inspirés des richesses du terroir malgache.</p>
+<div class="actions"><a class="btn gold" href="#produits">Découvrir les produits →</a><a class="btn ghost" href="#apropos">Notre histoire</a></div>
+</div></section>
+
+<section class="section intro"><div class="container intro-grid"><span class="label">01 — Mamoabio</span><div><h2>Du terroir malgache<br><em>à votre table.</em></h2><p>Une sélection de produits agricoles et d'épices qui mettent en valeur les richesses naturelles de Madagascar.</p></div></div></section>
+
+<section id="produits" class="section"><div class="container"><div class="heading"><div><span class="label">02 — Collection</span><h2>Nos produits <em>disponibles</em></h2></div><p>Découvrez les produits actuellement disponibles.</p></div>
+<div id="filters" class="filters"><button class="active" data-cat="all">Tous</button><button data-cat="cacao">Cacao</button><button data-cat="vanille">Vanille</button><button data-cat="epices">Épices</button><button data-cat="autres">Autres</button></div>
+<div id="products" class="grid"></div></div></section>
+
+<section class="banner"><div class="container banner-grid"><div><span class="label light">L'origine fait la différence</span><h2>Le goût d'une<br><em>terre unique.</em></h2></div><p>Des produits choisis pour leur caractère, leur origine et leur qualité.</p></div></section>
+
+<section id="apropos" class="section cream"><div class="container about"><div class="about-art">🌿<small>MAMOABIO<br>Madagascar</small></div><div><span class="label">03 — Notre histoire</span><h2>Une passion pour<br>les <em>produits vrais.</em></h2><p>Mamoabio valorise les richesses naturelles et agricoles de Madagascar à travers des produits authentiques et soigneusement sélectionnés.</p><p>Notre ambition est de faire découvrir la richesse du terroir malgache, localement et au-delà de nos frontières.</p></div></div></section>
+
+<section id="contact" class="section"><div class="container contact"><div><span class="label light">04 — Contact</span><h2>Un produit vous<br><em>intéresse ?</em></h2><p>Demandez les disponibilités, les prix ou les conditions de commande.</p></div>
+<form id="contactForm"><input name="name" placeholder="Votre nom" required><input type="email" name="email" placeholder="Votre email" required><select name="product" id="contactProduct"><option value="">Produit recherché</option></select><textarea name="message" placeholder="Votre message" required></textarea><button class="btn gold">Envoyer la demande →</button><div id="contactMsg"></div></form></div></section>
+</main>
+
+<footer><div class="container"><div class="footer-main"><div class="logo white"><b>M</b><span>Mamoa<i>bio</i></span></div><p>Les trésors naturels de Madagascar.</p><a href="#" data-open-admin>Administration</a></div><small>© 2026 Mamoabio — Madagascar 🇲🇬</small></div></footer>
+
+<div id="modal" class="modal"><div class="backdrop"></div><div class="modal-card"><button id="closeModal">×</button><img id="modalImg"><div class="modal-info"><span id="modalCat"></span><h2 id="modalTitle"></h2><p id="modalDesc"></p><strong id="modalPrice"></strong><a href="#contact" id="modalOrder" class="btn gold">Demander ce produit →</a></div></div></div>
+
+<div id="adminModal" class="modal is-login"><div class="backdrop" data-close-admin></div><div class="admin-modal"><button class="admin-x" data-close-admin aria-label="Fermer">×</button><div class="admin-scroll">
+<div id="loginView" class="admin-login"><div class="login-card"><span class="label">MAMOABIO ADMIN</span><h2>Connexion</h2><p>Accédez à votre espace de gestion.</p><form id="loginForm"><input id="identifier" placeholder="Email ou nom d'utilisateur" required><input id="password" type="password" placeholder="Mot de passe" required><button class="btn gold">Se connecter</button><div id="loginMsg"></div></form><a href="#" class="back" data-close-admin>← Retour au site</a></div></div>
+<div id="dashboardView" class="dashboard" hidden><div class="container"><div class="dash-head"><div><span class="label">ESPACE ADMINISTRATION</span><h2>Bonjour, <em id="currentUser"></em></h2></div><button id="logout" class="logout">Déconnexion</button></div>
+<div class="stat-grid"><div><b id="sProducts">0</b><span>Produits</span></div><div><b id="sAvailable">0</b><span>Disponibles</span></div><div><b id="sStockOut">0</b><span>Ruptures</span></div><div><b id="sInquiries">0</b><span>Nouvelles demandes</span></div></div>
+<div class="tabs"><button class="tab active" data-tab="productsTab">Produits</button><button class="tab" data-tab="inquiriesTab">Demandes</button><button class="tab super-only" data-tab="usersTab">Utilisateurs</button></div>
+<div id="productsTab" class="tab-content"><div class="panel"><div class="panel-head"><h3>Gestion des produits</h3><button id="newProduct" class="btn gold">+ Ajouter</button></div><div class="table-wrap"><table><thead><tr><th>Photo</th><th>Produit</th><th>Catégorie</th><th>Stock</th><th>Statut</th><th>Action</th></tr></thead><tbody id="adminProducts"></tbody></table></div></div></div>
+<div id="inquiriesTab" class="tab-content" hidden><div class="panel"><div class="panel-head"><h3>Demandes clients</h3></div><div id="inquiries"></div></div></div>
+<div id="usersTab" class="tab-content" hidden><div class="panel"><div class="panel-head"><h3>Gestion des utilisateurs</h3><button id="newUser" class="btn gold">+ Ajouter un utilisateur</button></div><div class="table-wrap"><table><thead><tr><th>Utilisateur</th><th>Email</th><th>Rôle</th><th>Action</th></tr></thead><tbody id="adminUsers"></tbody></table></div></div></div>
+</div></div>
+</div></div></div>
+
+<div id="productFormModal" class="modal"><div class="backdrop"></div><div class="form-modal"><button class="x" data-close-form>×</button><h2 id="productFormTitle">Ajouter un produit</h2><form id="productForm" enctype="multipart/form-data"><input type="hidden" name="id"><input name="name" placeholder="Nom du produit" required><select name="category"><option value="cacao">Cacao</option><option value="vanille">Vanille</option><option value="epices">Épices</option><option value="autres">Autres</option></select><textarea name="description" placeholder="Description"></textarea><input name="origin" value="Madagascar" placeholder="Origine"><input name="price" value="Prix sur demande" placeholder="Prix"><div class="two"><input name="stock" type="number" step="0.01" placeholder="Stock"><input name="unit" value="kg" placeholder="Unité"></div><label>Photo <input name="image" type="file" accept="image/*"></label><label><input name="available" type="checkbox" checked> Disponible</label><label><input name="featured" type="checkbox"> Produit mis en avant</label><button class="btn gold">Enregistrer</button><div id="productMsg"></div></form></div></div>
+
+<div id="userModal" class="modal"><div class="backdrop"></div><div class="form-modal"><button class="x" data-close-user>×</button><h2>Créer un utilisateur</h2><form id="userForm"><input name="username" placeholder="Nom utilisateur" required><input name="email" type="email" placeholder="Email" required><input name="password" type="password" placeholder="Mot de passe" required><select name="role"><option value="admin">Admin</option><option value="super_admin">Super Admin</option></select><button class="btn gold">Créer</button><div id="userMsg"></div></form></div></div>
+
+<script src="app.js"></script>
+</body></html>
